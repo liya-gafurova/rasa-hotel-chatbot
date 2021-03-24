@@ -51,13 +51,6 @@ nlu:
     - not really
 
 
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
 - intent: book_a_room
   examples: |
     - i want to book a room
@@ -75,59 +68,47 @@ nlu:
     - give some information
     - need some info
 
-
-- intent: telling_how_many_people
-  examples: |
-    - there will be [2](persons) of us
-    - there will be [2](persons)
-    - [2](persons) people
-    - just [2](persons)
-    - [2](persons)
-    - there will be [3](persons) of us
-    - there will be [3](persons)
-    - [3](persons) people
-    - just [3](persons)
-    - [3](persons)
-    - there will be [1](persons)
-    - will be [1](persons)
-    - [1](persons) person
-    - just [1](persons)
-    - [1](persons)
-
-- intent: tell_checkin_date
-  examples: |
-    - on [24.11](date_in)
-    - on [25.12](date_in)
-    - on [23.04](date_in)
-    - on [12.03](date_in)
-    - on [11.03](date_in)
-    - on [10.03](date_in)
-    - on [12.03](date_in)
-
-- intent: tell_staying_days
-  examples: |
-    - for [2 nights](stayin_days)
-    - for [3 nights](stayin_days)
-    - for [1 night](stayin_days)
-    - for [4 night](stayin_days)
-    - [5 nights](stayin_days)
-    - [6 nights](stayin_days)
-    - [3 nights](stayin_days)
-    - [2 nights](stayin_days)
-    - [1 night](stayin_days)
-
-
-
-- intent: room_349
-
-- intent: room_254
-
-- intent: no_room
-
 - intent: faq_order_food
 - intent: faq_parks
 - intent: faq_resturant
 - intent: faq_breakfast
 - intent: faq_check_out
 
--intent: other_question
+- intent: other_question
+- intent: call_human_operator
+
+- intent: ask_about_resturants
+  examples: |
+    - Where can I eat?
+    - Are there any restaurants nearby?
+    - Where can I find a restaurant?
+    - Do you have any restaurants near the hotel?
+    - Does the hotel have a restaurant?
+    - Can you advise me about some restaurants?
+    - Are there any restaurants you can recommend me to visit?
+    - Do you know about the restaurants nearby?
+    - What kind of restaurants do you have?
+    - Can you recommend any of the restaurants?
+    - where can I go to eat?
+    - i want to eat
+    - are there any cafes?
+    - are here any good meals?
+    - how to order food in room?
+    - where to find food
+
+- intent: in_house_resturants
+
+- intent: nearby_resturants
+  examples: |
+    - nearby cafes
+    - nearby resturants
+    - not in-house
+    - not in-house cafe
+    - not in-house resturants
+    - not hotel resturants
+    - not hotel cafes
+    - except hotel
+    - not in the hotel
+    - outside hotel cafe
+    - outside hotel resturant
+    - not in hotel
