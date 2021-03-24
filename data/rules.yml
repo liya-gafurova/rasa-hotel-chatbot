@@ -1,0 +1,93 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: faq order food
+  steps:
+  - intent: faq_order_food
+  - action: utter_faq_order_food
+  - action: utter_greet2
+
+- rule: faq parks
+  steps:
+  - intent: faq_parks
+  - action: utter_faq_parks
+  - action: utter_greet2
+
+- rule: faq resturant
+  steps:
+  - intent: faq_resturant
+  - action: utter_faq_resturant
+  - action: utter_greet2
+
+- rule: faq breakfast
+  steps:
+  - intent: faq_breakfast
+  - action: utter_faq_breakfast
+  - action: utter_greet2
+
+- rule: faq check out
+  steps:
+  - intent: faq_check_out
+  - action: utter_faq_check_out
+  - action: utter_greet2
+
+- rule: see faqs
+  steps:
+    - intent: see_FAQs
+    - action: utter_list_faqs
+
+- rule: room 254
+  steps:
+    - intent: room_254
+    - action: utter_booking_confirmation
+    - action: utter_how_can_i_help
+
+- rule: room 349
+  steps:
+    - intent: room_349
+    - action: utter_booking_confirmation
+    - action: utter_how_can_i_help
+
+- rule: no room
+  steps:
+    - intent: no_room
+    - action: utter_how_can_i_help
+
+- rule: available
+  steps:
+    - intent: tell_staying_days
+    - action: utter_tell_available_rooms
+    - action: utter_available_room1
+    - action: utter_available_room2
+    - action: utter_which_room_do_you_like
+
+- rule: base
+  steps:
+    - intent: book_a_room
+    - action: utter_how_many_people
+
+- rule: rth
+  steps:
+    - intent: telling_how_many_people
+    - action: utter_ask_day_in
+
+- rule: dgh
+  steps:
+    - intent: tell_checkin_date
+    - action: utter_ask_staying_days
+
+- rule: other question
+  steps:
+  - intent: other_question
+  - action: utter_call_for_operator

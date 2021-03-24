@@ -1,0 +1,177 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- book_a_room:
+    use_entities: true
+- see_FAQs:
+    use_entities: true
+- telling_how_many_people:
+    use_entities: true
+- tell_checkin_date:
+    use_entities: true
+- tell_staying_days:
+    use_entities: true
+- no_room:
+    use_entities: true
+- faq_resturant:
+    use_entities: true
+- faq_parks:
+    use_entities: true
+- room_349:
+    use_entities: true
+- faq_check_out:
+    use_entities: true
+- room_254:
+    use_entities: true
+- faq_order_food:
+    use_entities: true
+- faq_breakfast:
+    use_entities: true
+- other_question:
+    use_entities: true
+entities:
+- persons
+- date_in
+- stayin_days
+slots:
+  persons:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  date_in:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  stayin_days:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet1:
+  - text: |-
+      Hello!
+      Thank you for visiting our hotel!
+      I’m Lilly, your personal assistant.
+  utter_greet2:
+  - buttons:
+    - payload: /book_a_room
+      title: Book a room
+    - payload: /see_FAQs
+      title: FAQ
+    text: 'Here is the list of services we can provide:'
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_how_many_people:
+  - text: Great! How many people is the reservation for?
+  utter_ask_day_in:
+  - text: And what is the exact date of your arrival?
+  utter_ask_staying_days:
+  - text: How long will you stay?
+  utter_tell_available_rooms:
+  - text: On the specified date, we have the following rooms available.
+  utter_available_room1:
+  - text: |-
+      349 room
+      Room for {persons}.
+      Bathroom, Fridge, Towels, Wardrobe
+      Wi-Fi, TV
+      Price:  $560 per night
+  utter_available_room2:
+  - text: |-
+      254 room
+      Room for {persons}.
+      Bathroom, Fridge, AC, Towels, Wardrobe
+      Wi-Fi, TV
+      Price: $640 per night
+  utter_which_room_do_you_like:
+  - buttons:
+    - payload: /room_349
+      title: '349'
+    - payload: /room_254
+      title: '254'
+    - payload: /no_room
+      title: Neither
+    text: Which room would you prefer?
+  utter_how_can_i_help:
+  - buttons:
+    - payload: /book_a_room
+      title: Book a room
+    - payload: /see_FAQs
+      title: FAQ
+    text: How else can I help you?
+  utter_booking_confirmation:
+  - text: |-
+      You have booked a room.
+      Your reservation number is 963456741.
+      You’ll need to make a payment no later than 12 hours before checking-in.
+  utter_list_faqs:
+  - buttons:
+    - payload: /faq_order_food
+      title: How to order food to my room?
+    - payload: /faq_parks
+      title: Are there any parks nearby?
+    - payload: /faq_resturant
+      title: Does this hotel have a resturant?
+    - payload: /faq_breakfast
+      title: Is breakfast included?
+    - payload: /faq_check_out
+      title: When should I check-out?
+    - payload: /other_question
+      title: Other question
+    text: Frequently Asked Questions
+  utter_faq_order_food:
+  - text: |-
+      For food ordering, call 123-456.
+      Or visit out web-site http://hotel-resturant.com
+  utter_faq_parks:
+  - text: |-
+      The nearest park is 5 minutes away.
+      Here is a link to [google maps](https://www.google.com/)
+  utter_faq_resturant:
+  - text: |-
+      Our restaurant is open from 8.00 to 22.00.
+      We offer breakfast, brunch, lunch, dinner.
+      Breakfast is included in the room rate.
+  utter_faq_breakfast:
+  - text: Breakfast is included in the room rate.
+  utter_faq_check_out:
+  - text: You can check out at the reception on the day of departure.
+  utter_call_for_operator:
+  - text: I am calling to the Operator...
+actions:
+- utter_tell_available_rooms
+- utter_available_room1
+- utter_which_room_do_you_like
+- utter_ask_day_in
+- utter_booking_confirmation
+- utter_ask_staying_days
+- utter_available_room2
+- utter_how_can_i_help
+forms: {}
+e2e_actions: []

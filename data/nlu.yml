@@ -1,0 +1,133 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: book_a_room
+  examples: |
+    - i want to book a room
+    - i need a room in your hotel
+    - i want a room in you place
+    - need a room
+    - what rooms do you have
+
+- intent: see_FAQs
+  examples: |
+    - show info
+    - show faq
+    - i wanna see faqs
+    - thats the faqs?
+    - give some information
+    - need some info
+
+
+- intent: telling_how_many_people
+  examples: |
+    - there will be [2](persons) of us
+    - there will be [2](persons)
+    - [2](persons) people
+    - just [2](persons)
+    - [2](persons)
+    - there will be [3](persons) of us
+    - there will be [3](persons)
+    - [3](persons) people
+    - just [3](persons)
+    - [3](persons)
+    - there will be [1](persons)
+    - will be [1](persons)
+    - [1](persons) person
+    - just [1](persons)
+    - [1](persons)
+
+- intent: tell_checkin_date
+  examples: |
+    - on [24.11](date_in)
+    - on [25.12](date_in)
+    - on [23.04](date_in)
+    - on [12.03](date_in)
+    - on [11.03](date_in)
+    - on [10.03](date_in)
+    - on [12.03](date_in)
+
+- intent: tell_staying_days
+  examples: |
+    - for [2 nights](stayin_days)
+    - for [3 nights](stayin_days)
+    - for [1 night](stayin_days)
+    - for [4 night](stayin_days)
+    - [5 nights](stayin_days)
+    - [6 nights](stayin_days)
+    - [3 nights](stayin_days)
+    - [2 nights](stayin_days)
+    - [1 night](stayin_days)
+
+
+
+- intent: room_349
+
+- intent: room_254
+
+- intent: no_room
+
+- intent: faq_order_food
+- intent: faq_parks
+- intent: faq_resturant
+- intent: faq_breakfast
+- intent: faq_check_out
+
+-intent: other_question

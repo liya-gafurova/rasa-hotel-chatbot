@@ -1,0 +1,112 @@
+version: "2.0"
+
+stories:
+
+
+- story: booking1
+  steps:
+    - intent: greet
+    - action: utter_greet1
+    - action: utter_greet2
+    - intent: book_a_room
+    - action: utter_how_many_people
+    - intent: telling_how_many_people
+    - entities:
+        - persons: '3'
+    - action: utter_ask_day_in
+    - intent: tell_checkin_date
+    - entities:
+        - date_in: '7.10'
+    - action: utter_ask_staying_days
+    - intent: tell_staying_days
+    - entities:
+        - stayin_days: '3 nights'
+    - action: utter_tell_available_rooms
+    - action: utter_available_room1
+    - action: utter_available_room2
+    - action: utter_which_room_do_you_like
+    - intent: room_349
+    - action: utter_booking_confirmation
+    - action: utter_how_can_i_help
+
+
+- story: booking3
+  steps:
+    - intent: greet
+    - action: utter_greet1
+    - action: utter_greet2
+    - intent: book_a_room
+    - action: utter_how_many_people
+    - intent: telling_how_many_people
+    - entities:
+        - persons: '3'
+    - action: utter_ask_day_in
+    - intent: tell_checkin_date
+    - entities:
+        - date_in: '7.10'
+    - action: utter_ask_staying_days
+    - intent: tell_staying_days
+    - entities:
+        - stayin_days: '3 nights'
+    - action: utter_tell_available_rooms
+    - action: utter_available_room1
+    - action: utter_available_room2
+    - action: utter_which_room_do_you_like
+    - intent: room_254
+    - action: utter_booking_confirmation
+    - action: utter_how_can_i_help
+
+- story: booking2
+  steps:
+    - intent: greet
+    - action: utter_greet1
+    - action: utter_greet2
+    - intent: book_a_room
+    - action: utter_how_many_people
+    - intent: telling_how_many_people
+    - entities:
+        - persons: '3'
+    - action: utter_ask_day_in
+    - intent: tell_checkin_date
+    - entities:
+        - date_in: '7.10'
+    - action: utter_ask_staying_days
+    - intent: tell_staying_days
+    - entities:
+        - stayin_days: '3 nights'
+    - action: utter_tell_available_rooms
+    - action: utter_available_room1
+    - action: utter_available_room2
+    - action: utter_which_room_do_you_like
+    - intent: no_room
+    - action: utter_how_can_i_help
+
+- story: booking2
+  steps:
+    - intent: book_a_room
+    - action: utter_how_many_people
+    - intent: telling_how_many_people
+    - entities:
+        - persons: '3'
+    - action: utter_ask_day_in
+    - intent: tell_checkin_date
+    - entities:
+        - date_in: '7.10'
+    - action: utter_ask_staying_days
+    - intent: tell_staying_days
+    - entities:
+        - stayin_days: '3 nights'
+    - action: utter_tell_available_rooms
+    - action: utter_available_room1
+    - action: utter_available_room2
+    - action: utter_which_room_do_you_like
+
+
+- story: base
+  steps:
+    - intent: book_a_room
+    - action: utter_how_many_people
+    - intent: telling_how_many_people
+    - action: utter_ask_day_in
+    - intent: tell_checkin_date
+    - action: utter_ask_staying_days
